@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head'); %>
+  </head>
+  <body>
+    <%- include('./partials/header'); %>
+
+    <section>Aquí ira el contnido de todas las paginas</section>
+
+    <div class="flex flex-wrap">
+      <% if (data.data.length > 0 ) { %> <% data.data.forEach(function(element)
+      { %>
+      <div
+        class="bg-gray-900 m-2 rounded-lg shadow-lg text-center text-slate-50 h-20 w-1/4 p-4"
+      >
+        <p>nombre: <strong><%= element.name %></strong></p> 
+        <p>correo: <strong><%= element.email %></strong></p>
+      </div>
+      <% }); %> <% } else { %>
+      <p>No data</p>
+      <% } %>
+    </div>
+
+    <%- include('./partials/footer'); %>
+  </body>
+</html>
